@@ -1,0 +1,153 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Zepto UI Clone</title>
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css" rel="stylesheet">
+    <link href="Zepto.css" rel="stylesheet" >
+</head> 
+<body>
+    <header>
+        <div class="logo">zepto</div>
+        <div class="log"> 
+            <div class="dropdown-container">
+                <button class="dropdown-button" onclick="openModal()"><i class="fas fa-map-marker-alt"></i> Select Location </button>
+            </div>
+        </div>
+        <div id="locationModal" class="modal">
+            <div class="modal-content">
+                <span class="close-button" onclick="closeModal()">&times;</span>
+                <h2>Your Location</h2>
+                <div>
+                    <input type="text" class="search-input" placeholder="Search a new address"> 
+                </div>
+                <div class="location-option">
+                    <strong>Current Location</strong><br>
+                    <small>Enable your current location for better services</small><br>
+                    <button class="enable-button" onclick="enableLocation()">Enable</button>
+                </div>
+            </div>
+        </div>
+        
+        <div class="search-bar">
+            <input id="searchInput" type="text" placeholder="Search for &quot;chocolate box&quot;">
+            <div id="suggestionsBox" class="suggestions-box"></div>
+        </div>
+        <div class="actions">
+            <a href="register.html"> <button><i class="fas fa-user"></i> Login</button></a> 
+            <button><i class="fas fa-shopping-cart"></i> Cart</button>
+        </div>
+    </header>
+
+    <div class="banner">
+        <div class="text">
+            <a href="register.html"> <img src="banner.webp" alt="Paan Corner"></a>
+        </div>
+    </div>
+
+    <div class="categories">
+        <h2 >Grocery & Kitchen</h2>
+        <div class="grid">
+            <div class="item">
+                <img src="Fruits-and-Vegetables.jpg" alt="Fruits & Vegetables">
+                <span>Fruits & Vegetables</span>
+            </div>
+            <div class="item">
+                <img src="Dairy, Bread & Eggs.jpg" alt="Dairy, Bread & Eggs">
+                <span>Dairy, Bread & Eggs</span>
+            </div>
+            <div class="item">
+                <img src="Atta.jpg" alt="Atta, Rice, Oil & Dals">
+                <span>Atta, Rice, Oil & Dals</span>
+            </div>
+            <div class="item">
+                <img src="fish.jpg" alt="Meats, Fish & Eggs">
+                <span>Meats, Fish & Eggs</span>
+            </div>
+            <div class="item">
+                <img src="dryfruits.jpg" alt="Masala & Dry Fruits">
+                <span>Masala & Dry Fruits</span>
+            </div>
+            <div class="item">
+                <img src="breakfast.webp" alt="Breakfast & Sauces">
+                <span>Breakfast & Sauces</span>
+            </div>
+            <div class="item">
+                <img src="magi-1.jpg    " alt="Packaged Food">
+                <span>Packaged Food</span>
+            </div>
+        </div>
+    </div>
+
+    <div class="categories">
+        <h2 > Snacks and Drinks </h2>
+        <div class="grid">
+            <div class="item">
+                <img src="zepto.jpg" alt="Fruits & Vegetables">
+                <span>Zepto Cafe</span>
+            </div>
+            <div class="item">
+                <img src="tea.avif" alt="Dairy, Bread & Eggs">
+                <span>Tea, Coffe & More</span>
+            </div>
+            <div class="item">
+                <img src="icecream.png" alt="Atta, Rice, Oil & Dals">
+                <span>Ice creams & More </span>
+            </div>
+            <div class="item">
+                <img src="frozen-snacks.jpg" alt="Meats, Fish & Eggs">
+                <span>Frozen Foods </span>
+            </div>
+            <div class="item">
+                <img src="gukab.webp" alt="Masala & Dry Fruits">
+                <span>Sweet Cravings </span>
+            </div>
+            <div class="item">
+                <img src="breakfast.webp" alt="Breakfast & Sauces">
+                <span>Cold Drinks & Juices </span>
+            </div>
+            <div class="item">
+                <img src="magi.jpg" alt="Packaged Food">
+                <span>Biscuits & Cookies </span>
+            </div>
+        </div>
+    </div>
+    <div class="categories">
+        <h2 >Beauty & Personal Care </h2>
+        <div class="grid">
+            <div class="item">
+                <img src="Fruits-and-Vegetables.jpg" alt="Fruits & Vegetables">
+                <span>Makeup & Beauty</span>
+            </div>
+            <div class="item">
+                <img src="Dairy, Bread & Eggs.jpg" alt="Dairy, Bread & Eggs">
+                <span>Skincare</span>
+            </div>
+            <div class="item">
+                <img src="Atta.jpg" alt="Atta, Rice, Oil & Dals">
+                <span>Baby Care </span>
+            </div>
+            <div class="item">
+                <img src="fish.jpg" alt="Meats, Fish & Eggs">
+                <span>Bath & Body</span>
+            </div>
+            <div class="item">
+                <img src="dryfruits.jpg" alt="Masala & Dry Fruits">
+                <span>Hair Care </span>
+            </div>
+            <div class="item">
+                <img src="breakfast.webp" alt="Breakfast & Sauces">
+                <span>Jwellery & Accessories</span>
+            </div>
+            <div class="item">
+                <img src="magi.jpg" alt="Packaged Food">
+                <span>Apparel & Lifestyle   </span>
+            </div>
+        </div>
+    </div>
+
+   
+    <script src="zeco.js"></script>
+</body>
+</html>

@@ -1,0 +1,146 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Live Search Example</title>
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css" rel="stylesheet">
+    <style>
+        /* Default Light Mode */
+        body {
+            background-color: #ffffff;
+            color: #000000;
+            font-family: Arial, sans-serif;
+            margin: 0;
+            padding: 0;
+            transition: background-color 0.3s ease;
+        }
+
+        /* Button styles */
+        button.theme-toggle {
+            background-color: transparent;
+            border: none;
+            font-size: 24px;
+            cursor: pointer;
+            color: #000000;
+            position: fixed;
+            top: 20px;
+            right: 20px;
+            z-index: 1000;
+            transition: color 0.3s ease;
+        }
+
+        /* Live search container */
+        #searchContainer {
+            margin-top: 100px;
+            padding: 20px;
+            text-align: center;
+        }
+
+        #searchBar {
+            padding: 10px;
+            font-size: 16px;
+            width: 300px;
+            margin-bottom: 20px;
+            border: 1px solid #ccc;
+        }
+
+        #searchResults {
+            list-style: none;
+            padding: 0;
+        }
+
+        #searchResults li {
+            padding: 10px;
+            background-color: #f4f4f4;
+            margin-bottom: 5px;
+            border-radius: 5px;
+        }
+
+        body.dark-mode {
+            background-color: #121212;
+        }
+
+        button.theme-toggle.dark-mode {
+            color: #ffffff;
+        }
+
+        body.dark-mode #searchBar {
+            background-color: #333333;
+            color: #ffffff;
+            border: 1px solid #666666;
+        }
+
+        body.dark-mode #searchResults li {
+            background-color: #444444;
+            color: #ffffff;
+        }
+    </style>
+</head>
+<body>
+    <header>
+        <div class="logo">Zepto</div>
+        <button id="themeToggle" class="theme-toggle">
+            <i id="themeIcon" class="fas fa-sun"></i>
+        </button>
+    </header>
+
+    <!-- Search Bar and Results -->
+    <div id="searchContainer">
+        <input type="text" id="searchBar" placeholder="Search...">
+        <ul id="searchResults"></ul>
+    </div>
+
+    <script>
+        const themeToggleButton = document.getElementById('themeToggle');
+        const themeIcon = document.getElementById('themeIcon');
+        const body = document.body;
+
+        // Example data to search through
+        const items = [
+            'Apple',
+            'Banana',
+            'Orange',
+            'Grapes',
+            'Pineapple',
+            'Watermelon',
+            'Mango',
+            'Peach',
+            'Strawberry',
+            'Blueberry'
+        ];
+
+        // Elements
+        const searchBar = document.getElementById('searchBar');
+        const searchResults = document.getElementById('searchResults');
+
+        // Event listener for the theme toggle button
+        themeToggleButton.addEventListener('click', () => {
+            body.classList.toggle('dark-mode');
+            if (body.classList.contains('dark-mode')) {
+                themeIcon.classList.remove('fa-sun');
+                themeIcon.classList.add('fa-moon');
+            } else {
+                themeIcon.classList.remove('fa-moon');
+                themeIcon.classList.add('fa-sun');
+            }
+        });
+
+        // Event listener for search input
+        searchBar.addEventListener('input', function() {
+            const query = searchBar.value.toLowerCase(); // Get search query
+            searchResults.innerHTML = ''; // Clear previous results
+
+            // Filter items based on the search query
+            const filteredItems = items.filter(item => item.toLowerCase().includes(query));
+
+            // Display filtered results
+            filteredItems.forEach(item => {
+                const li = document.createElement('li');
+                li.textContent = item;
+                searchResults.appendChild(li);
+            });
+        });
+    </script>
+</body>
+</html>
